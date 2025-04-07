@@ -1,0 +1,602 @@
+:root {
+    /* Roblox Color scheme */
+    --primary-color: #ff4444;
+    --primary-dark: #e63b3b;
+    --secondary-color: #00a2ff;
+    --accent-color: #00b06f;
+    --success-color: #02b757;
+    --warning-color: #fcaf17;
+    --error-color: #ff3c3c;
+    --text-light: #ffffff;
+    --text-dark: #393b3d;
+    --text-muted: #656668;
+    --gray-100: #f6f7f8;
+    --gray-200: #ebeced;
+    --gray-300: #d2d3d5;
+    --gray-400: #bfc0c2;
+    --gray-500: #a7a8aa;
+    --gray-600: #656668;
+    --gray-700: #4e4f50;
+    --gray-800: #393b3d;
+    --gray-900: #232527;
+    --roblox-black: #232527;
+    --roblox-dark-gray: #393b3d;
+    
+    /* Typography */
+    --font-family: 'HCo Gotham SSm', 'Gotham', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-xxl: 3rem;
+    
+    /* Border radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 24px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(25, 25, 25, 0.12), 0 1px 2px rgba(25, 25, 25, 0.24);
+    --shadow-md: 0 4px 6px rgba(25, 25, 25, 0.1);
+    --shadow-lg: 0 6px 16px rgba(0, 0, 0, 0.12);
+    --shadow-inset: inset 0 2px 5px rgba(25, 25, 25, 0.1);
+    
+    /* Animations */
+    --transition-speed: 0.2s;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+code {
+    font-family: monospace;
+    background-color: var(--gray-200);
+    padding: 0.1rem 0.3rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.9em;
+}
+
+/* App Container */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+    padding: var(--space-lg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card & Form Styling */
+.form-container {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.card {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: var(--space-xl);
+    text-align: center;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.card-header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.card-header .subtitle {
+    opacity: 0.8;
+    margin-top: var(--space-sm);
+    font-weight: 300;
+}
+
+/* Form Styling */
+.form-section {
+    padding: var(--space-xl);
+}
+
+.instructions-container {
+    background-color: rgba(67, 97, 238, 0.05);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    border-left: 4px solid var(--primary-color);
+}
+
+.instructions-container h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--space-md);
+    font-size: 1.2rem;
+}
+
+.instruction-list {
+    padding-left: var(--space-xl);
+}
+
+.instruction-list li {
+    margin-bottom: var(--space-sm);
+    color: var(--gray-800);
+}
+
+.instructions-container {
+    background-color: rgba(67, 97, 238, 0.05);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    border-left: 4px solid var(--primary-color);
+}
+
+.instructions-container h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--space-md);
+    font-size: 1.2rem;
+}
+
+.instruction-list {
+    padding-left: var(--space-xl);
+}
+
+.instruction-list li {
+    margin-bottom: var(--space-sm);
+    color: var(--gray-800);
+}
+
+.required-prefix {
+    color: var(--error-color);
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+.form-description {
+    margin-bottom: var(--space-lg);
+    color: var(--gray-700);
+    text-align: center;
+}
+
+.required-prefix {
+    color: var(--error-color);
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+.form-group {
+    margin-bottom: var(--space-lg);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--space-sm);
+    font-weight: 500;
+    color: var(--gray-800);
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: var(--space-md);
+    border: 2px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-family: var(--font-family);
+    font-size: 1rem;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    resize: vertical;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.3);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: var(--space-xs);
+    min-height: 1.2rem;
+}
+
+/* Button Styling */
+.form-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md) var(--space-xl);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: var(--font-family);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+.btn-text {
+    margin-right: var(--space-sm);
+}
+
+.btn-icon {
+    font-size: 0.9em;
+}
+
+.spinner {
+    display: none;
+    position: absolute;
+}
+
+/* Status Messages */
+.status-message {
+    margin: 0 var(--space-xl) var(--space-xl);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-weight: 500;
+    transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.status-success {
+    background-color: rgba(46, 204, 113, 0.2);
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+}
+
+.status-error {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: var(--space-md) var(--space-lg);
+    color: var(--gray-600);
+    font-size: 0.875rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .content {
+        padding: var(--space-md);
+    }
+    
+    .card-header {
+        padding: var(--space-lg);
+    }
+    
+    .card-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .form-section {
+        padding: var(--space-md);
+    }
+    
+    .btn-primary {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .card-header {
+        padding: var(--space-md);
+    }
+    
+    .card-header h1 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn var(--transition-speed) ease forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading Screen Styles */
+.loading-screen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.loading-screen-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-screen-content {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.loading-screen-text {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.loading-progress-container {
+    width: 100%;
+    height: 20px;
+    background-color: var(--gray-200);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.loading-progress-bar {
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    width: 0%;
+    transition: width 0.2s ease;
+}
+
+.loading-percentage {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Additional input styles */
+.input-error {
+    border-color: var(--error-color) !important;
+}
+
+.input-focused {
+    position: relative;
+}
+
+.input-focused:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+/* Roblox-Specific Styles */
+.card-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" opacity="0.1"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>');
+    background-repeat: repeat;
+    background-size: 24px 24px;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.card-header h1, .card-header .subtitle {
+    position: relative;
+    z-index: 1;
+}
+
+.card-header h1 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.instructions-container {
+    border-left: 4px solid #00a2ff;
+}
+
+.instructions-container h3 {
+    color: #00a2ff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 1.2rem;
+}
+
+.required-prefix {
+    color: #ff4444;
+}
+
+textarea {
+    border: 2px solid #d2d3d5;
+    background-color: #f6f7f8;
+}
+
+textarea:focus {
+    border-color: #00a2ff;
+    box-shadow: 0 0 0 3px rgba(0, 162, 255, 0.3);
+}
+
+.loading-screen-overlay {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.loading-screen-content {
+    background: #ffffff;
+    border: 2px solid #00a2ff;
+}
+
+.loading-progress-bar {
+    background: #00a2ff;
+}
+
+.loading-screen-text {
+    color: #393b3d;
+}
+
+/* Override status messages for Roblox theme */
+.status-error {
+    background-color: rgba(255, 68, 68, 0.1);
+    color: #ff4444;
+    border: 1px solid #ff4444;
+}
+
+/* Add Roblox-style button effects */
+.btn-primary:hover {
+    background: #0082cc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:active {
+    background: #0076b8;
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+/* Footer with Roblox style */
+.footer {
+    background-color: rgba(35, 37, 39, 0.8);
+    color: #ffffff;
+    text-align: center;
+    padding: var(--space-md);
+    margin-top: auto;
+    font-size: 0.85rem;
+}
+
+/* IP Display Styles */
+.user-ip-display {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #393b3d;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.ip-label {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.ip-address {
+    font-family: monospace;
+    font-size: 0.95rem;
+}
+
+/* Cooldown styles */
+.btn-primary:disabled {
+    background: #7a7a7a;
+    cursor: not-allowed;
+    opacity: 0.8;
+    transform: none;
+    box-shadow: none;
+}
